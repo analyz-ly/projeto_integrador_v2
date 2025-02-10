@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Produtos</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <header>
+        <h1>Lorem ipsum</h1>
+        <nav>
+            <ul>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#qr-code">Leitor QR Code</a></li>
+                <li><a href="#contato">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="galeria">
+        <h2>Galeria de Produtos</h2>
+        <div class="grid">
+            <div class="produto"><img src="roxo tom pastel.jpg" alt="Produto 1"></div>
+            <div class="produto"><img src="fundo roxo.png" alt="Produto 2"></div>
+            <div class="produto"><img src="fundo azul.png" alt="Produto 3"></div>
+            <div class="produto"><img src="yellow-leaves-9374748_1280.jpg" alt="Produto 4"></div>
+                <div class="produto"><img src="oranges-4566274_1280.jpg" alt="Produto 5"></div>
+                <div class="produto"><img src="willow-catkin-8608845_1280.jpg" alt="Produto 5"></div>
+                <div class="produto"><img src="animal-9262352_1280.jpg" alt="Produto 6"></div>
+                <div class="produto"><img src="grass-9197173_1280.jpg" alt="Produto 7"></div>
+                <div class="produto"><img src="frog-9335937_1280.jpg" alt="Produto 8"></div>
+                <div class="produto"><img src="oranges-4566274_1280.jpg" alt="Produto 9"></div>
+                <div class="produto"><img src="cat-8600417_1280.jpg" alt="Produto 10"></div>
+                <div class="produto"><img src="coffee-9135194_1280.jpg" alt="Produto 11"></div>
+                <div class="produto"><img src="lily-8157895_1280.jpg" alt="Produto 12"></div>
+                <div class="produto"><img src="blue-flower-5158746_1280.jpg" alt="Produto 13"></div>
+                <div class="produto"><img src="heavenly-bamboo-9286035_1280.jpg" alt="Produto 14"></div>
+                <div class="produto"><img src="apples-7445797_1280.jpg" alt="Produto 15"></div>
+                <div class="produto"><img src="minimalism-8360717_1280.jpg" alt="Produto 16"></div>
+                <div class="produto"><img src="paris-7539257_1280.jpg" alt="Produto 17"></div>
+                <div class="produto"><img src="architecture-5585737_1280.jpg" alt="Produto 18"></div>
+                <div class="produto"><img src="new-york-7781184_1280.jpg" alt="Produto 19"></div>
+                <div class="produto"><img src="grey-heron-4353038_1280.jpg" alt="Produto 20"></div>
+                <div class="produto"><img src="heron-9029702_1280.jpg" alt="Produto 21"></div>
+                <div class="produto"><img src="dive-9093321_1280.jpg" alt="Produto 22"></div>
+                <div class="produto"><img src="architecture-7947727_1280.jpg" alt="Produto 23"></div>
+                <div class="produto"><img src="fish-7375042_1280.jpg" alt="Produto 24"></div>
+                <div class="produto"><img src="building-1590596_1280.jpg" alt="Produto 25"></div>
+                <div class="produto"><img src="building-9340309_1280.jpg" alt="Produto 26"></div>
+                <div class="produto"><img src="jellyfish-4760924_1280.jpg" alt="Produto 27"></div>
+                <div class="produto"><img src="shark-8182315_1280.jpg" alt="Produto 28"></div>
+                <div class="produto"><img src="shark-164899_1280.jpg" alt="Produto 29"></div>
+                <div class="produto"><img src="skyscraper-8373617_1280.jpg" alt="Produto 30"></div>
+                <div class="produto"><img src="bird-3674652_1280.jpg" alt="Produto 31"></div>
+                <div class="produto"><img src="bird-7089719_1280.jpg" alt="Produto 32"></div>
+                <div class="produto"><img src="common-heron-8565354_1280.jpg" alt="Produto 33"></div>
+                <div class="produto"><img src="lionfish-4482131_1280.jpg" alt="Produto 34"></div>
+                <div class="produto"><img src="octopus-8562474_1280.jpg" alt="Produto 35"></div>
+                <div class="produto"><img src="underwater-378216_1280.jpg" alt="Produto 36"></div>
+                <div class="produto"><img src="underwater-4441991_1280.jpg" alt="Produto 37"></div>
+                <div class="produto"><img src="royal-gramma-basslet-8012082_1280.jpg" alt="Produto 38"></div>
+
+        </div>
+    </section>
+
+    <section id="qr-code"> 
+        <h2>Verifique com o QrCode</h2>
+        <div id="preview">
+            
+        </div>
+        <button id="start">Iniciar Leitor</button>
+        <p id="qr-result"></p>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("start").addEventListener("click",()=>{
+            document.getElementById("preview").style.display='flex'
+            const scanner = new Html5QrcodeScanner("preview",{
+                fps: 15,
+                qrbox: 250,
+            })
+            scanner.render(
+            (resultado)=>{
+                document.getElementById("qr-result").innerText=resultado
+            }
+        )
+        
+        })
+        
+    </script>
+</body> 
+</html>
+
