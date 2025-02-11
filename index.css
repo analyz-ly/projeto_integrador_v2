@@ -104,6 +104,13 @@ input, textarea {
         width: 400px;
         height: auto;
     }
+    .grid{
+        grid-template-columns: 1fr;
+        padding: 5px 10px;
+    }
+    #galeria{
+        padding: 10px 5px;
+    }
 }
 @media screen and (min-width:600px){
     #preview{
